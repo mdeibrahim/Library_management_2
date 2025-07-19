@@ -24,6 +24,7 @@ class UserCreateSerializer(DjoserUserCreateSerializer):
             'password': {'write_only': True, 'min_length': 8},
             'confirm_password': {'write_only': True, 'min_length': 8}
         }
+        ref_name = "CustomUserCreateSerializer"
         
     def validate(self, data):
         if data['password'] != data['confirm_password']:
